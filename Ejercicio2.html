@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Conoce-T Centro Psicológico y Psicoanalítico</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header, section, footer {
+      padding: 2rem;
+      margin: auto;
+      max-width: 1000px;
+    }
+    header {
+      background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+      color: white;
+      text-align: center;
+      border-radius: 0 0 2rem 2rem;
+    }
+    img.logo {
+      max-width: 150px;
+      border-radius: 1rem;
+    }
+    h1 {
+      margin-top: 0.5rem;
+    }
+    section {
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-top: 1rem;
+    }
+    h2 {
+      color: #6a11cb;
+    }
+    .accordion {
+      cursor: pointer;
+      padding: 1rem;
+      background-color: #f0f4ff;
+      border: none;
+      border-radius: 0.5rem;
+      margin-top: 0.5rem;
+      font-weight: bold;
+    }
+    .panel {
+      display: none;
+      padding: 1rem;
+      border-left: 4px solid #6a11cb;
+      margin-bottom: 1rem;
+      background: #f9f9ff;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+    form button {
+      background: #6a11cb;
+      color: white;
+      padding: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .confirmation {
+      margin-top: 1rem;
+      color: green;
+      font-weight: bold;
+    }
+    .social a {
+      margin-right: 1rem;
+      text-decoration: none;
+      color: #2575fc;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img class="logo" src="https://raw.githubusercontent.com/Per-Arredondo/Clinica_medica/main/logo.png" alt="Logo" />
+    <h1>Conoce-T Centro Psicológico y Psicoanalítico</h1>
+  </header>
+
+  <section>
+    <h2>¿Quiénes somos?</h2>
+    <p>Somos un espacio dedicado a la Supervisión y crecimiento de terapeutas...</p>
+    <h2>Misión</h2>
+    <p>Refinar la manera en que los terapeutas comprenden a sus pacientes...</p>
+    <h2>Visión</h2>
+    <p>Ser una clínica referente por excelencia, trato humano y compromiso...</p>
+    <h2>Valores</h2>
+    <p><strong>COMPROMISO CON LA SALUD MENTAL:</strong> Creemos en la Psicoterapia-Psicoanálisis...</p>
+  </section>
+
+  <section>
+    <h2>Terapia Psicoanalítica</h2>
+    <button class="accordion">Psicoterapia para Parejas</button>
+    <div class="panel">Intervención para mejorar la comunicación y vínculos afectivos...</div>
+    <button class="accordion">Psicoterapia para Niños</button>
+    <div class="panel">Atención emocional adaptada a infantes con técnicas lúdicas...</div>
+    <button class="accordion">Psicoterapia para Adolescentes</button>
+    <div class="panel">Espacio de expresión y acompañamiento para adolescentes...</div>
+    <button class="accordion">Psicoterapia Individual</button>
+    <div class="panel">Exploración del mundo interno, vínculos y procesos psíquicos...</div>
+    <button class="accordion">Supervisión de Casos Clínicos</button>
+    <div class="panel">Acompañamiento profesional para mejorar la práctica clínica...</div>
+  </section>
+
+  <section>
+    <h2>Agendar Cita</h2>
+    <form id="citaForm">
+      <input type="text" name="nombre" placeholder="Nombre completo" required />
+      <input type="tel" name="telefono" placeholder="Teléfono" required />
+      <input type="email" name="correo" placeholder="Correo electrónico" required />
+      <select name="sexo" required>
+        <option value="">Sexo</option>
+        <option value="Femenino">Femenino</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Otro">Otro</option>
+      </select>
+      <select name="tipo" required>
+        <option value="">Tipo de Terapia</option>
+        <option>Psicoterapia para Parejas</option>
+        <option>Psicoterapia para Niños</option>
+        <option>Psicoterapia para Adolescentes</option>
+        <option>Psicoterapia Individual</option>
+        <option>Supervisión de Casos Clínicos</option>
+      </select>
+      <input type="date" name="fecha" required />
+      <input type="time" name="hora" required />
+      <textarea name="comentarios" placeholder="Comentarios adicionales..."></textarea>
+      <button type="submit">Agendar Cita</button>
+    </form>
+    <div id="confirmacion" class="confirmation" style="display: none;"></div>
+  </section>
+
+  <section class="social">
+    <h2>Síguenos en Nuestras Redes Sociales</h2>
+    <a href="https://instagram.com/conocet.psi" target="_blank">Instagram</a>
+    <a href="https://facebook.com/profile.php?id=100041276426768" target="_blank">Facebook</a>
+    <a href="https://youtube.com/@danarova1" target="_blank">YouTube</a>
+    <a href="https://tiktok.com/@centroconocet" target="_blank">TikTok</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Conoce-T Centro Psicológico y Psicoanalítico</p>
+  </footer>
+
+  <script>
+    // Accordion toggle
+    document.querySelectorAll(".accordion").forEach(button => {
+      button.addEventListener("click", () => {
+        const panel = button.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+      });
+    });
+
+    // Form submission
+    document.getElementById("citaForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+
+      const response = await fetch("https://script.google.com/macros/s/AKfycbwqkIOnrvtAlrmEtrGKkGku2HvRWF5fkBIkEIxtMuOcVLEMJiTs28IfXWPCAhge6m1Kow/exec", {
+        method: "POST",
+        body: data
+      });
+
+      if (response.ok) {
+        const confirmacion = document.getElementById("confirmacion");
+        confirmacion.textContent = "✅ Gracias, tu cita ha sido agendada.\n⏳ Redirigiendo al inicio...\n🎉 Te contactaremos pronto.";
+        confirmacion.style.display = "block";
+        setTimeout(() => {
+          confirmacion.style.display = "none";
+          form.reset();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }, 5000);
+      }
+    });
+  </script>
+</body>
+</html>
